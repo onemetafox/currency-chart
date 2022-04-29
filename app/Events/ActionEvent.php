@@ -13,15 +13,17 @@ use Illuminate\Queue\SerializesModels;
 class ActionEvent
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
-
+    public $actionId;
+    public $actionData;
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($actionId, $actionData)
     {
-        //
+        $this->actionId = $actionId;
+        $this->actionData = $actionData;
     }
 
     /**
@@ -32,5 +34,19 @@ class ActionEvent
     public function broadcastOn()
     {
         return new PrivateChannel('channel-name');
+    }
+    /**
+    * Get the data to broadcast.
+    *
+    * @author Author
+    *
+    * @return array
+    */
+    public function broadcastWith()
+    {
+        return [
+            'actionId' => $this->actionId,    
+            'actionData' => $this->actionData,
+        ];
     }
 }
