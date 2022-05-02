@@ -7,14 +7,14 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Message\Request;
 use GuzzleHttp\Message\Response;
 
-class GetCurrencyCron extends Command
+class CurrencyCron extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'getcurrency:cron';
+    protected $signature = 'currency:cron';
 
     /**
      * The console command description.
@@ -30,8 +30,10 @@ class GetCurrencyCron extends Command
      */
     public function handle()
     {
-        $client = new Client();
-        $response = $client->get("https://api.monobank.ua/bank/currency");
-        return $response;
+        // $client = new Client();
+        // $response = $client->get("https://api.monobank.ua/bank/currency")->getBody();
+        // \Log::info(json_decode($response));
+        // return json_decode($response);
+        return true;
     }
 }

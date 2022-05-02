@@ -8,23 +8,24 @@ use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 class Kernel extends ConsoleKernel
 {
     /**
-     * The Artisan commands provided by your application.
-     *
-     * @var array
-     */
-    protected $commands = [
-        Commands\GetCurrencyCron::class,
-    ];
-    /**
      * Define the application's command schedule.
      *
      * @param  \Illuminate\Console\Scheduling\Schedule  $schedule
      * @return void
      */
+    protected $commands = [
+
+        Commands\CurrencyCron::class,
+
+    ];
+
     protected function schedule(Schedule $schedule)
     {
-        $data = $schedule->command('getcurrency:cron')->everyFiveMinutes();
-        return $data;
+        $data = $schedule->command('currency:cron')->everyMinute();
+        $actionId = "getCurrency";
+        $actionData = $data;
+        event(new \App\Events\ActionEvent($actionId, $actionData));
+        // return $data;
     }
 
     /**

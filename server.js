@@ -8,13 +8,14 @@ var redisPort = process.env.REDIS_PORT;
 var redisHost = process.env.REDIS_HOST;
 var ioRedis = require('ioredis');
 var redis = new ioRedis(redisPort, redisHost);
-redis.subscribe('action-channel-one');
+redis.subscribe('currency-channel');
 redis.on('message', function (channel, message) {
   message  = JSON.parse(message);
   io.emit(channel + ':' + message.event, message.data);
 });
 
 var broadcastPort = process.env.BROADCAST_PORT;
+
 server.listen(broadcastPort, function () {
-  console.log('Socket server is running.');
+  console.log('Socket server is running.' +  broadcastPort);
 });

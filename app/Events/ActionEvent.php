@@ -33,7 +33,7 @@ class ActionEvent
      */
     public function broadcastOn()
     {
-        return new PrivateChannel('channel-name');
+        return new Channel('currency-channel');
     }
     /**
     * Get the data to broadcast.
@@ -42,11 +42,11 @@ class ActionEvent
     *
     * @return array
     */
-    public function broadcastWith()
-    {
-        return [
-            'actionId' => $this->actionId,    
-            'actionData' => $this->actionData,
-        ];
-    }
+    // public function broadcastWith()
+    // {
+    //     return [
+    //         'actionId' => $this->actionId,    
+    //         'actionData' => $this->actionData,
+    //     ];
+    // }
 }
