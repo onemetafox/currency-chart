@@ -32,7 +32,6 @@ class CurrencyCron extends Command
     {
         // $client = new Client();
         // $response = $client->get("https://api.monobank.ua/bank/currency")->getBody();
-        // \Log::info(json_decode($response));
         // return json_decode($response);
         return true;
     }

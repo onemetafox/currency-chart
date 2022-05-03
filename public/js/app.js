@@ -7345,20 +7345,9 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+E;
 
 var Example = function Example() {
-  // var sock = io("{{ env('PUBLISHER_URL') }}:{{ env('BROADCAST_PORT') }}");
-  // sock.on('currency-channel:App\\Events\\ActionEvent', function (data){
-  //     var action = data.actionId;
-  //     var actionData = data.actionData;
-  //     if(action == "score_update" && actionData.team1_score) {
-  //         $("#team1_score").html(actionData.team1_score);
-  // }
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("true"),
-      _useState2 = _slicedToArray(_useState, 2),
-      signal = _useState2[0],
-      setSignal = _useState2[1];
-
   Echo.channel('currency-channel').listen("ActionEvent", function (e) {
     console.log("This is the signal test");
 
@@ -7368,6 +7357,12 @@ var Example = function Example() {
       setSignal("true");
     }
   });
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("true"),
+      _useState2 = _slicedToArray(_useState, 2),
+      signal = _useState2[0],
+      setSignal = _useState2[1];
+
   var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useDispatch)();
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     dispatch((0,_actions_currencyAction__WEBPACK_IMPORTED_MODULE_2__.getAll)());

@@ -3,17 +3,8 @@ import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import {getAll,selectCurrency} from '../actions/currencyAction';
-
+E
 const Example = () =>{
-    // var sock = io("{{ env('PUBLISHER_URL') }}:{{ env('BROADCAST_PORT') }}");
-    
-    // sock.on('currency-channel:App\\Events\\ActionEvent', function (data){
-    //     var action = data.actionId;
-    //     var actionData = data.actionData;
-    //     if(action == "score_update" && actionData.team1_score) {
-    //         $("#team1_score").html(actionData.team1_score);
-    // }
-    const [signal, setSignal] =  useState("true")
     Echo.channel('currency-channel').listen("ActionEvent", e=>{
         console.log("This is the signal test");
         if(signal == "true"){
@@ -22,6 +13,8 @@ const Example = () =>{
             setSignal("true");
         }
     })
+    const [signal, setSignal] =  useState("true")
+    
     const dispatch = useDispatch();
     useEffect(()=>{
         dispatch(getAll());

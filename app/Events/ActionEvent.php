@@ -10,7 +10,7 @@ use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
-class ActionEvent
+class ActionEvent 
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
     public $actionId;
@@ -42,11 +42,11 @@ class ActionEvent
     *
     * @return array
     */
-    // public function broadcastWith()
-    // {
-    //     return [
-    //         'actionId' => $this->actionId,    
-    //         'actionData' => $this->actionData,
-    //     ];
-    // }
+    public function broadcastWith()
+    {
+        return [
+            'actionId' => $this->actionId,    
+            'actionData' => $this->actionData,
+        ];
+    }
 }

@@ -16,3 +16,7 @@ use App\Http\Controllers\Controller;
 Route::get('/', function(){
 	return view('welcome');
 });
+Route::get('/fire', function () {
+    event(new \App\Events\ActionEvent("id", "data"));
+    return 'ok';
+});
