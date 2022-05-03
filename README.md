@@ -15,3 +15,19 @@ Structure of Project:
 
 In the backend, for fetching data from API laravel schedule and socket.io was used.
 React and bootstrap was used for the Frontend.
+
+## Preinstallation
+Node.js
+Composer
+Redis
+
+## Install
+First step is clone from github repository : https://github.com/todaycodemaster/currency-chart.git
+In this second step, we have to install vender : composer install
+In thrid step, install node module : npm install
+In the fourth step, copy .env.example file to .env file and set configure for redis
+
+## Testing
+1. run backend php server: php artisan serve
+2. run react front end : npm run watch
+3. run scheduler to get data per 5 min and broadcastig to client: php artisan schedule:work
