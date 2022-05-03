@@ -21,6 +21,8 @@ window.Echo = new Echo({
     host: window.location.hostname + ':6001' // this is laravel-echo-server host
 });
 
+window.Echo.join('currency-channel');
+
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
  * for events that are broadcast by Laravel. Echo and event broadcasting

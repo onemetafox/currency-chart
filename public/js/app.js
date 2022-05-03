@@ -7296,6 +7296,7 @@ window.Echo = new laravel_echo__WEBPACK_IMPORTED_MODULE_0__["default"]({
   host: window.location.hostname + ':6001' // this is laravel-echo-server host
 
 });
+window.Echo.join('currency-channel');
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
  * for events that are broadcast by Laravel. Echo and event broadcasting
@@ -7348,8 +7349,6 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 var Example = function Example() {
   Echo.channel('currency-channel').listen("ActionEvent", function (e) {
-    console.log("This is the signal test");
-
     if (signal == "true") {
       setSignal("false");
     } else {
@@ -7404,22 +7403,7 @@ var Example = function Example() {
       })]
     })
   });
-}; // import React from 'react';
-// function Example() {
-//     return (
-//         <div className="container">
-//             <div className="row justify-content-center">
-//                 <div className="col-md-8">
-//                     <div className="card">
-//                         <div className="card-header">Example Component</div>
-//                         <div className="card-body">I'm an example component!</div>
-//                     </div>
-//                 </div>
-//             </div>
-//         </div>
-//     );
-// }
-
+};
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Example);
 
