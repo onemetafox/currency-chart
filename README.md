@@ -20,6 +20,7 @@ React and bootstrap was used for the Frontend.
 Node.js
 Composer
 Redis
+laravel-echo-server install grobally
 
 ## Install
 First step is clone from github repository : https://github.com/todaycodemaster/currency-chart.git
@@ -31,3 +32,4 @@ In the fourth step, copy .env.example file to .env file and set configure for re
 1. run backend php server: php artisan serve
 2. run react front end : npm run watch
 3. run scheduler to get data per 5 min and broadcastig to client: php artisan schedule:work
+4. run laravel echo server to get signal from server : laravel-echo-server start
