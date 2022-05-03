@@ -7345,7 +7345,6 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-E;
 
 var Example = function Example() {
   Echo.channel('currency-channel').listen("ActionEvent", function (e) {

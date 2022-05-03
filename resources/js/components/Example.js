@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import {getAll,selectCurrency} from '../actions/currencyAction';
-E
 const Example = () =>{
     Echo.channel('currency-channel').listen("ActionEvent", e=>{
         console.log("This is the signal test");
